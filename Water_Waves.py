@@ -19,7 +19,7 @@ Informations:
     There are other techniques but i have chosen this one.
     
     This program is not very fast because too much springs are used, you can modify the script to optimize it.
-    You can release some spring and create a draw system with 2d polygons to make the script faster and more optimised.
+    You can release some spring and create a draw system with 2d polygons to make the script faster and more optimized.
 
     GOOD JOB !
 
@@ -205,7 +205,6 @@ class Spring:
         self.x = x
         self.y = 0
         self.speed = 0
-        self.prev_speed = 0
         self.height = target_height
         self.bottom = 400
         self.rod_width = rod_width
