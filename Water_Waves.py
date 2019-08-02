@@ -4,29 +4,24 @@ from threading import Thread
 import time
 
 
-
 """
-
 Informations:
 
-    Simple script that shows how to make waves in 2d with Pygame.
+    Simple script that shows how to make 2d waves with Pygame.
     
     I created this program with a good tutorial on this page:
     --> https://gamedevelopment.tutsplus.com/tutorials/make-a-splash-with-dynamic-2d-water-effects--gamedev-236
 
     This program use the Threads, with this module you can change the FPS constants destined to Pygame and consequently accelerate the program
-    but nothing change because the Update() function is not connected with the Pygame' s framerate.
-    There are other techniques but i have chosen this one.
+    but nothing changes because the Update() function is not connected with the Pygame' s framerate.
+    There are other methods but i have chosen this one.
     
     This program is not very fast because too much springs are used, you can modify the script to optimize it.
-    You can release some spring and create a draw system with 2d polygons to make the script faster and more optimized.
-
-    GOOD JOB !
-
+    You can release some springs and create a draw system with 2d polygons to make the script faster and more optimized.
 """
 
 
-
+# Constants
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 400
 CAPTION = "Waves Simulation with Pygame"
@@ -35,10 +30,9 @@ BLUE = (0, 103, 247)
 WHITE = (255, 255, 255)
 
 
-
 class Main:
     def __init__(self):
-        """Main class (init class)"""
+        """Main class"""
 
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption(CAPTION)
@@ -89,17 +83,13 @@ class Main:
     def create_number_rod(self):
         """Have half rod on all the water"""
 
-        number = abs(int((self.init_position_x - self.final_position_x) / 2))
-
-        return number
+        return abs(int((self.init_position_x - self.final_position_x) / 2))
 
 
     def create_rod_width(self):
         """Make an size average thank to the number of rod"""
 
-        width = int((self.init_position_x + self.final_position_x) / self.number_rod)
-
-        return width
+        return int((self.init_position_x + self.final_position_x) / self.number_rod)
             
 
     def create_spring_list(self, rod_width):
@@ -224,7 +214,6 @@ class Spring:
         (Here this is a simple rod)"""
 
         pygame.draw.line(screen, BLUE, (self.x, self.height), (self.x, self.bottom), self.rod_width)
-
 
 
 class Counter_Waves_Motion(Thread):
