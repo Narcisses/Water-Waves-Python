@@ -13,7 +13,7 @@ Informations:
     --> https://gamedevelopment.tutsplus.com/tutorials/make-a-splash-with-dynamic-2d-water-effects--gamedev-236
 
     This program use the Threads, with this module you can change the FPS constants destined to Pygame and consequently accelerate the program
-    but nothing changes because the Update() function is not connected with the Pygame' s framerate.
+    but nothing changes because the Update() function is not connected with the Pygame's framerate.
     There are other methods but i have chosen this one.
     
     This program is not very fast because too much springs are used, you can modify the script to optimize it.
@@ -44,17 +44,17 @@ class Main:
         self.dampening = 0.020
         self.spread = 0.25
         self.height_splash = 5 ## Number of loop round // Warnning with a too hight value on this variable, the script will be very slower
-        self.init_speed = 100 ## Initial speed
+        self.init_speed = 200 ## Initial speed
         self.init_position_x = 0 ## first position
         self.final_position_x = 400 ## second_position
 
         self.springs = [] ## List of objects (here the objects are Springs)
 
         self.number_rod = self.create_number_rod()
-        rod_width = self.create_rod_width()
-        self.init_index = int(self.number_rod / rod_width)
-        self.create_spring_list(rod_width)
-        self.start_water_waves(rod_width)
+        self.rod_width = self.create_rod_width()
+        self.init_index = int(self.number_rod / self.rod_width)
+        self.create_spring_list(self.rod_width)
+        self.start_water_waves(self.rod_width)
         
         self.done = False
 
@@ -70,6 +70,11 @@ class Main:
                     self.done = True
                     pygame.quit()
                     exit()
+                if event.type == MOUSEBUTTONUP:
+                    if self.counter.done == True:
+                        pos = pygame.mouse.get_pos()
+                        self.init_index = int(pos[0] / self.final_position_x * self.number_rod)
+                        self.start_water_waves(self.rod_width)
 
             self.draw_level()
             
