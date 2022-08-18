@@ -17,5 +17,5 @@ pip install pygame
 
 ## Run Simulation
 ```
-python3 Water_Waves.py
+python3 water_waves.py
 ```
