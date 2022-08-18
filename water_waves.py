@@ -29,16 +29,22 @@ class Main:
 
         self.time = pygame.time.Clock()
         
-        self.target_height = 200 ## Max wave height and stable point
+        # Max wave height and stable point
+        self.target_height = 200
         self.tension = 0.025
         self.dampening = 0.020
         self.spread = 0.25
-        self.height_splash = 5 ## Number of loop round // Warnning with a too hight value on this variable, the script will be very slower
-        self.init_speed = 200 ## Initial speed
-        self.init_position_x = 0 ## first position
-        self.final_position_x = 400 ## second_position
+        # Number of loop round // Warning with a too hight value on this variable, the script will be very slower
+        self.height_splash = 5
+        # Initial speed
+        self.init_speed = 200
+        # First position
+        self.init_position_x = 0
+        # Second position
+        self.final_position_x = 400
 
-        self.springs = [] ## List of objects (here the objects are Springs)
+        # List of objects (here the objects are Springs)
+        self.springs = []
 
         self.number_rod = self.create_number_rod()
         self.rod_width = self.create_rod_width()
@@ -71,7 +77,7 @@ class Main:
             for spring in self.springs:
                 spring.draw(self.screen)
                 
-            self.time.tick(FPS) ## Set a FPS constants but you can change it
+            self.time.tick(FPS)
             pygame.display.flip()
 
 
@@ -182,7 +188,6 @@ class Main:
         self.screen.fill(WHITE)
 
 
-        
 class Spring:
     def __init__(self, x, target_height, rod_width):
         """Spring Creator, one spring by one"""
@@ -239,8 +244,5 @@ class Counter_Waves_Motion(Thread):
             time.sleep(self.time_sleep) 
 
 
-
 if __name__ == "__main__":
-    obj_main = Main()
-
-## In this program all is OOP
+    Main()
