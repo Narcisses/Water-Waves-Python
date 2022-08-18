@@ -1,4 +1,4 @@
-# Water-Waves-Python
+# Water Waves Python
 Python programs that shows how to make 2D waves with Pygame.
     
 I created this program using a tutorial that can be found on this page:
