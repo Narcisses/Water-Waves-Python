@@ -6,18 +6,8 @@ import time
 
 """
 Informations:
-
-    Simple script that shows how to make 2d waves with Pygame.
-    
-    I created this program with a good tutorial on this page:
-    --> https://gamedevelopment.tutsplus.com/tutorials/make-a-splash-with-dynamic-2d-water-effects--gamedev-236
-
-    This program use the Threads, with this module you can change the FPS constants destined to Pygame and consequently accelerate the program
-    but nothing changes because the Update() function is not connected with the Pygame's framerate.
-    There are other methods but i have chosen this one.
-    
-    This program is not very fast because too much springs are used, you can modify the script to optimize it.
-    You can release some springs and create a draw system with 2d polygons to make the script faster and more optimized.
+I created this program using tutorial found on this page: https://gamedevelopment.tutsplus.com/tutorials/make-a-splash-with-dynamic-2d-water-effects--gamedev-236
+This program uses the Threads Python module, with this module you can change the FPS constants destined to Pygame and consequently accelerate the program.
 """
 
 
