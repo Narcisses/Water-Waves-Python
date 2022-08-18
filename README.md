@@ -6,6 +6,10 @@ I created this program using tutorial found on this page:
 
 This program uses the Threads Python module, with this module you can change the FPS constants destined to Pygame and consequently accelerate the program.
 
+<p align="center">
+  <img width="400" height="auto" src="https://github.com/JimPavan/Water-Waves-Python/blob/master/screenshots/simulation.gif">
+</p>
+
 ## Requirements
 - Python 3.X.X
 - Pygame
